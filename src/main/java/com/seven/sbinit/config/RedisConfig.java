@@ -21,6 +21,8 @@ public class RedisConfig {
         template.setValueSerializer(RedisSerializer.json());
         template.setHashValueSerializer(RedisSerializer.json());
         template.afterPropertiesSet();
+        //开始事务控制
+        template.setEnableTransactionSupport(true);
         return template;
     }
 
@@ -33,6 +35,8 @@ public class RedisConfig {
         template.setValueSerializer(RedisSerializer.string());
         template.setHashValueSerializer(RedisSerializer.string());
         template.afterPropertiesSet();
+        //开始事务控制
+        template.setEnableTransactionSupport(true);
         return template;
     }
 

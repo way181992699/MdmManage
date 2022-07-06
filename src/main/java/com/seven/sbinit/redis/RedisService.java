@@ -4,6 +4,7 @@ import org.springframework.data.redis.connection.DataType;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.*;
@@ -38,6 +39,7 @@ public class RedisService {
      * BoundSetOperations<K, V> boundSetOps(K key);
      * BoundZSetOperations<K, V> boundZSetOps(K key);
      */
+    @Transactional
     public void demonstration() {
         stringOperation();
         hashOperation();
@@ -96,8 +98,8 @@ public class RedisService {
         System.out.println("numType.toString() = " + numType.toString());
         System.out.println("julyType.toString() = " + julyType.toString());
         //1.10 key改名
-//        redisStringTemplate.rename("julywe","julyNew");
-        redisStringTemplate.renameIfAbsent("july", "julyNew123");
+//        redisStringTemplate.rename("julywe", "julyNew");
+        redisStringTemplate.renameIfAbsent("july123123", "julyNew123");
         //1.11 判断key是否存在
         Boolean keyIsExist = redisStringTemplate.hasKey("july");
         System.out.println("keyIsExist = " + keyIsExist);

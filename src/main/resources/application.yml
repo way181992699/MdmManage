@@ -4,17 +4,17 @@ spring:
       host: localhost
       port: 27017
       database: monge_demo
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/demo
-    username: root
-    password: 123456
-  jpa:
-    hibernate:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/demo
+#    username: root
+#    password: 123456
+#  jpa:
+#    hibernate:
       #????????????ps:???mysql?????,?????"/demo"
-      ddl-auto: update
+#      ddl-auto: update
     #jpa?????????Hibernate?sql(??)
-    show-sql: true
+#    show-sql: true
   redis:
     host: localhost
     database: 0
@@ -25,6 +25,21 @@ logging:
   level:
     org.springframework.data.mongodb.core: debug
 server:
-  port: 8787
+  port: 8778
 
-
+APNS_CONFIG: /mdm.mobileconfig
+APNS_CRT: /mbaike.crt
+APNS_KEY: /mbaikenopass.key
+APNS_MDMPASS: abcd1234
+APNS_P12MDM: /MDMPush.p12
+APNS_PEM: /ca-bundle.pem
+BASE_URL: http://mdm.mbaike.net
+DOWN_MOBILECONFIG: /device/down.do?deviceId={0}
+emailaddress: keaijohnlee@163.com
+emailpass: xxxx
+emailsmtp: smtp.163.com
+jdbc:
+  driverClassName: com.mysql.cj.jdbc.Driver
+  password: 123456
+  url: jdbc:mysql://127.0.0.1:3306/mdm
+  username: root
